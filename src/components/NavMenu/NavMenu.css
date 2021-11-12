@@ -1,0 +1,9 @@
+.navMenu{
+    background-color: #FFF;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+.navMenu .logo{
+    max-width: 60px;
+    border-radius: 50%;
+}
