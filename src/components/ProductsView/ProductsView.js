@@ -11,18 +11,14 @@ function ProductsView({ cols, products }) {
       <Topbar />
       <NavMenu />
       <div className={cols}>
-        <section class="cards">
-          <article class="card card--1">
-            <div class="card__img">
-              <img src/>
-            </div>
-            <div class="card__info">
-              <span class="card__category"> Recipe</span>
-              <h3 class="card__title">Crisp Spanish tortilla Matzo brei</h3>
-            </div>
-          </article>
-
-        </section>
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card cap" />
+          <div class ="card-body">
+          <h5 class ="card-title">Card title</h5>
+          <p class ="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class ="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
