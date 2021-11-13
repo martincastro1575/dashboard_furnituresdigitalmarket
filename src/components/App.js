@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route} from "react-router-dom";
+import ProductsView from "./ProductsView/ProductsView";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<ContentWrapper/>}/>
         <Route exact path="/aboutus" element={<AboutUs/>}/>
+        <Route exact path="/products" element={<ProductsView/>}/>
       </Routes>
   </Router>
   );

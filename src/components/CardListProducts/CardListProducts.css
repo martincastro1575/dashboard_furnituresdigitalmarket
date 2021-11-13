@@ -1,0 +1,26 @@
+/* Card Details Css*/
+
+img {
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-header-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-buttons button{
+  border: none;
+  background-color: #fff;
+  width: 34px;
+  border-radius: 6px;
+  color: #42938e;
+  font-size: 21px;
+  margin: 0 8px;
+}
+
+.arrow-buttons button:last-child{
+  margin-right: 0;
+}
