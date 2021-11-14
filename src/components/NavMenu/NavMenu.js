@@ -13,9 +13,6 @@ function Topbar() {
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="/products">Products</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/aboutus">About Us</a>
-                        </li>
                     </ul>
                     <h1>Furnitures Digital Market</h1>
                 </div>

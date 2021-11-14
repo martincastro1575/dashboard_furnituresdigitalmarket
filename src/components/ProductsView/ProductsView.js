@@ -47,15 +47,16 @@ const handleCard = (e) =>{
 }
 
   return (
-    <div id="content-wrapper">
+    <div>
       <Topbar />
       <NavMenu />
       <div className="container-fluid products-view">
       <div className='arrow-buttons'>
             <button onClick={handlePagePrevious}><i className="fas fa-angle-left"></i></button>
+            <span>{page} / <b>{productByPage.pages}</b></span>
             <button onClick={handlePageNext}><i className="fas fa-angle-right"></i></button>
           </div>
-        <div className="row row-cols-1 row-cols-md-4 g-4">
+        <div className="row row-cols-1 row-cols-md-5 g-4">
           {!isEmpty(productByPage.data) && productByPage.data.map((p, idx) => (
             <CardDetails key={idx} title={p.name} image={!isEmpty(p.images) ? p.images[0].name : 'not-empty.jpg'} description={p.description} aditionalData={p.price} onClickCard={handleCard} detail={p.detail}/>
           ))} 

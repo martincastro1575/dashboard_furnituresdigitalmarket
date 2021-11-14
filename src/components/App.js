@@ -1,6 +1,5 @@
 import React from "react";
 import ContentWrapper from "./ContantWrapper/ContentWrapper";
-import AboutUs from "./AboutUs/AboutUs";
 import ProductDetailView from "./ProductDetailView/ProductDetailView";
 
 import {
@@ -13,10 +12,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<ContentWrapper/>}/>
-        <Route exact path="/aboutus" element={<AboutUs/>}/>
-        <Route exact path="/products" element={<ProductsView/>}/>
-        <Route exact path="/products/:id" element={<ProductDetailView/>}/>
+        <Route path="/" element={<ContentWrapper/>}/>
+        <Route path="/products" element={<ProductsView/>}/>
+        <Route path="/products/:id" element={<ProductDetailView/>}/>
       </Routes>
   </Router>
   );

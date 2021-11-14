@@ -12,3 +12,8 @@
     color: #42938e;
     font-size: 24px;
 }
+
+.navMenu .nav-item a{
+    font-weight: 500;
+    font-size: 18px;
+}

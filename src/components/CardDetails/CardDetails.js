@@ -6,7 +6,7 @@ import { isEmpty } from "lodash";
 
 function CardDetails({ cols, image, title, description, aditionalData, linkTo, props, onClickCard, detail }) {
   return (
-    <div className='col'>
+    <div className='col card-details'>
       <div className="card" onClick={detail ? () => onClickCard(detail) : ''}>
         {!isEmpty(image) ?
             <img src={`${'/assets/images/products/'}${image}`} className="card-img-top" alt="..." />

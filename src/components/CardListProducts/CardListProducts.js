@@ -3,7 +3,7 @@ import './CardListProducts.css'
 
 import PropTypes from "prop-types";
 
-function CardListProducts({ cols, products, handlePagePrevious, handlePageNext }) {
+function CardListProducts({ cols, products, handlePagePrevious, handlePageNext, page, totalPages }) {
   return (
     <div className={cols}>
       <div className="card mt-4">
@@ -11,6 +11,7 @@ function CardListProducts({ cols, products, handlePagePrevious, handlePageNext }
           Listado de productos
           <div className='arrow-buttons'>
             <button onClick={handlePagePrevious}><i className="fas fa-angle-left"></i></button>
+            <span>{page} / <b>{totalPages}</b></span>
             <button onClick={handlePageNext}><i className="fas fa-angle-right"></i></button>
           </div>
 

@@ -1,7 +1,6 @@
 /* Card Details Css*/
 
-img {
-    max-height: 200px;
+.card-details img {
     object-fit: cover;
     object-position: center;
   }
