@@ -105,7 +105,7 @@ function ContentWrapper({pageNumber}) {
                         <div className='col-md-6'>
                             <CardDetails
                                 cols='col'
-                                image={!isEmpty(product) ? product.rows[0].images[0].name : ''}
+                                image={!isEmpty(product) ? product.rows[0].images[0]?.name : ''}
                                 title={!isEmpty(product) ? product.rows[0].name : ''}
                                 description={!isEmpty(product) ? product.rows[0].description : ''}
                                 aditionalData={!isEmpty(product) ? product.rows[0].price : ''}
