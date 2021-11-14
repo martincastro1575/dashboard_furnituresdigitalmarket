@@ -13,6 +13,7 @@ import axios from "axios";
 
 
 import CardListProducts from "../CardListProducts/CardListProducts";
+import CardListCategories from "../CardListCategories/CardListCategories";
 
 function ContentWrapper({pageNumber}) {
     const [product, setProduct] = useState();
@@ -119,6 +120,11 @@ function ContentWrapper({pageNumber}) {
                         <div className='col-md-6'>
                             {!isEmpty(productByPage) &&
                                 <CardListProducts handlePageNext={handlePageNext} handlePagePrevious={handlePagePrevious} products={productByPage.data} />
+                            }
+                        </div>
+                        <div className='col-md-6'>
+                            {!isEmpty(productByPage) &&
+                                <CardListCategories handlePageNext={handlePageNext} handlePagePrevious={handlePagePrevious} categories={categories} />
                             }
                         </div>
                     </div>
