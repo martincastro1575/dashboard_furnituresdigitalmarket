@@ -16,16 +16,18 @@ function ProductDetailView({ }) {
 
     const hadleProductsPage = async () => {
       let resultados = await axios.get(`http://localhost:3500/api/products/${id}`);
+      console.log(resultados.data.data)
       setProduct(resultados.data.data);
     };
     hadleProductsPage();
 
   }, [id]);
 
-  return (
+  return (    
     <div>
       <Topbar />
       <NavMenu />
+
       <div className="container-fluid product-details">
         <div className="card-columns">
           {!isEmpty(product) && !isUndefined(product) && 
