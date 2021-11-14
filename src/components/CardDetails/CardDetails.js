@@ -2,12 +2,17 @@ import React from "react";
 import './CardDetails.css'
 
 import PropTypes from "prop-types";
+import { isEmpty } from "lodash";
 
-function CardDetails({ cols, image, title, description, aditionalData }) {
+function CardDetails({ cols, image, title, description, aditionalData, linkTo, props, onClickCard, detail }) {
   return (
-    <div className={cols}>
-      <div className="card">
-        <img src={`${'/assets/images/'}${image}`} className="card-img-top" alt="..." />
+    <div className='col'>
+      <div className="card" onClick={detail ? () => onClickCard(detail) : ''}>
+        {!isEmpty(image) ?
+            <img src={`${'/assets/images/products/'}${image}`} className="card-img-top" alt="..." />
+            : <img src={'/assets/images/products/not-empty.jpg'} className="card-img-top" alt="..." />
+        }
+        
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
@@ -24,6 +29,9 @@ CardDetails.propTypes = {
   cols: PropTypes.string,
   description: PropTypes.string,
   aditionalData: PropTypes.string,
+  linkTo: PropTypes.string,
+  onClickCard: PropTypes.func,
+  detail: PropTypes.string,
 };
 
 CardDetails.defaultProps = {
