@@ -3,17 +3,17 @@ import './CardListCategories.css'
 
 import PropTypes from "prop-types";
 
-function CardListCategories({ cols, products, handlePagePrevious, handlePageNext }) {
+function CardListCategories({ cols, categories }) {
   return (
     <div className={cols}>
-      <div class="card mt-4">
+      <div class="card card-categories mt-4">
         <div class="card-header card-header-list">
           Listado de categorias
-
+          <span>Cantidad de productos</span>
         </div>
         <ul class="list-group list-group-flush">
-          {products.map((p, idx) =>
-            <li key={idx} class="list-group-item">{p.Category} {p.cantidad}</li>
+          {categories.map((c, idx) =>
+            <li key={idx} class="list-group-item">{c.Category} <span>{c.cantidad}</span> </li>
           )}
         </ul>
       </div>

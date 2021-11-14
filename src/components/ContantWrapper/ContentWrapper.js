@@ -17,7 +17,7 @@ import CardListCategories from "../CardListCategories/CardListCategories";
 
 function ContentWrapper({pageNumber}) {
     const [product, setProduct] = useState();
-    const [categories, setCategories] = useState("");
+    const [categories, setCategories] = useState([]);
     const [count, setCount] = useState("");
     const [productByPage, setProductByPage] = useState("");
     const [users, setUsers] = useState([]);
@@ -141,7 +141,7 @@ function ContentWrapper({pageNumber}) {
                         </div>
                         <div className='col-md-6'>
                             {!isEmpty(productByPage) &&
-                                <CardListCategories handlePageNext={handlePageNext} handlePagePrevious={handlePagePrevious} categories={categories} />
+                                <CardListCategories categories={categories} />
                             }
                         </div>
                     </div>
