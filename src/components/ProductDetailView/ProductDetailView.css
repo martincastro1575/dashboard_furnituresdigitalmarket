@@ -12,6 +12,7 @@
 }
 .product-details .card .card-body {
   padding: 0;
+  padding-bottom: 30px;
 }
 .product-details .card .card-body h5 {
   background-color: #42938e;

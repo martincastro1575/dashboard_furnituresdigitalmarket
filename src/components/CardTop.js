@@ -29,7 +29,7 @@ function CardTop({ title, quantity, cols, icon }) {
 
 CardTop.propTypes = {
   title: PropTypes.string.isRequired,
-  quantity: PropTypes.number,
+  quantity: PropTypes.any,
   cols: PropTypes.string,
   icon: PropTypes.string,
 };

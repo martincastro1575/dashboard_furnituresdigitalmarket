@@ -8,7 +8,7 @@ function CardDetails({ cols, image, title, description, aditionalData, linkTo, p
 
   return (
     <div className='col card-details'>
-      <div className="card" onClick={detail ? () => onClickCard(detail) : ''}>
+      <div className="card" onClick={detail ? () => onClickCard(detail) : () => {}}>
         {!isEmpty(image) ?
             <img src={`${'/assets/images/products/'}${image}`} className="card-img-top" alt="..." />
             : <img src={'/assets/images/products/not-empty.jpg'} className="card-img-top" alt="..." />

@@ -17,7 +17,7 @@ import CardListCategories from "../CardListCategories/CardListCategories";
 
 function ContentWrapper({pageNumber}) {
     const [product, setProduct] = useState();
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState(0);
     const [count, setCount] = useState();
     const [productByPage, setProductByPage] = useState("");
     const [users, setUsers] = useState([]);
