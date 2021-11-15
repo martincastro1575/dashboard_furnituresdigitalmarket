@@ -9,14 +9,12 @@ import { isEmpty, isUndefined } from 'lodash'
 import axios from "axios";
 function ProductDetailView() {
   const [product, setProduct] = useState([]);
-  console.log("🚀 ~ file: ProductDetailView.js ~ line 12 ~ ProductDetailView ~ product", product)
   const { id } = useParams()
 
   useEffect(() => {
 
     const hadleProductsPage = async () => {
-      let resultados = await axios.get(`http://localhost:3500/api/products/${id}`);
-      console.log(resultados.data.data)
+      let resultados = await axios.get(`http://127.0.0.1:3500/api/products/${id}`);
       setProduct(resultados.data.data);
     };
     hadleProductsPage();
@@ -24,7 +22,7 @@ function ProductDetailView() {
   }, [id]);
 
   return (
-    <div id="content-wrapper" >
+    <div className='container-general' >
       <Topbar />
       <NavMenu />
 
@@ -45,7 +43,7 @@ function ProductDetailView() {
                     <p class="card-text">Medida de ancho: {product.width}</p>
                     <p class="card-text">Cantidad disponible: {product.quantity}</p>
                     <p class="card-text">Descuento para clientes registrados: {product.discount}</p>
-                    <p class="card-text">Precio full sin descuento: {product.price}</p>
+                    <p class="card-text">Precio full sin descuento: $ {product.price}</p>
                   </div>
                 </div>
               </div>
