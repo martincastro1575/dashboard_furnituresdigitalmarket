@@ -10,6 +10,8 @@ import {useNavigate} from 'react-router-dom';
 import { isEmpty } from 'lodash'
 import axios from "axios";
 import CardDetails from "../CardDetails/CardDetails";
+
+import requestPort from "../utils/constants";
 function ProductsView({}) {
   const [productByPage, setProductByPage] = useState([]);
   const [page, setPage] = useState(1);
@@ -19,7 +21,7 @@ function ProductsView({}) {
 
   useEffect(() => {
     const hadleProductsPage = async () => {
-        let resultados = await axios.get(`http://localhost:3500/api/products?page=${page}`);
+        let resultados = await axios.get(`${requestPort}/api/products?page=${page}`);
         setProductByPage(resultados.data);
     };
     hadleProductsPage();
@@ -47,7 +49,7 @@ const handleCard = (e) =>{
 }
 
   return (
-    <div>
+    <div className='products container-general'>
       <Topbar />
       <NavMenu />
       <div className="container-fluid products-view">

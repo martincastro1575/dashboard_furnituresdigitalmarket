@@ -1,20 +1,19 @@
-
-.product-details{
+.product-details {
   height: 80vh;
 }
 
-.product-details .card{
+.product-details .card {
   max-width: 1000px;
-      margin: auto;
-      margin-top: 56px;
+  margin: auto;
+  margin-top: 56px;
 }
-.product-details .card .card-body .card-text{
+.product-details .card .card-body .card-text {
   padding-left: 20px;
 }
-.product-details .card .card-body{
- padding: 0;
+.product-details .card .card-body {
+  padding: 0;
 }
-.product-details .card .card-body h5{
+.product-details .card .card-body h5 {
   background-color: #42938e;
   height: 60px;
   display: flex;

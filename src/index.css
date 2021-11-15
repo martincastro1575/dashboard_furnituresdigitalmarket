@@ -39,6 +39,8 @@ code {
   padding: 10px 0;
   margin-top: 60px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .container-footer .col-icon {
@@ -91,4 +93,8 @@ code {
 .card-top-title {
   font-weight: 600;
   color: #505050;
+}
+
+.container-general{
+  padding-bottom: 160px;
 }

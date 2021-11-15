@@ -10,7 +10,7 @@ import './ContentWrapper.css'
 
 import { isEmpty, isUndefined } from 'lodash'
 import axios from "axios";
-
+import requestPort from '../utils/constants'
 
 import CardListProducts from "../CardListProducts/CardListProducts";
 import CardListCategories from "../CardListCategories/CardListCategories";
@@ -21,7 +21,6 @@ function ContentWrapper({pageNumber}) {
     const [count, setCount] = useState("");
     const [productByPage, setProductByPage] = useState("");
     const [users, setUsers] = useState([]);
-    console.log("🚀 ~ file: ContentWrapper.js ~ line 23 ~ ContentWrapper ~ users", users)
     const [page, setPage] = useState(pageNumber);
 
 
@@ -34,7 +33,7 @@ function ContentWrapper({pageNumber}) {
     useEffect(() => {
         const handleProducts = async () => {
             let resultados = await axios.get(
-                `http://localhost:3500/api/products/all`
+                `${requestPort}/api/products/all`
             );
             setProduct(resultados.data.data);
         };
@@ -44,7 +43,7 @@ function ContentWrapper({pageNumber}) {
     useEffect(() => {
         const handleUsers = async () => {
             let resultados = await axios.get(
-                `http://localhost:3500/api/users/`
+                `${requestPort}/api/users/`
             );
             setUsers(resultados.data.total);
         };
@@ -54,7 +53,7 @@ function ContentWrapper({pageNumber}) {
 
     useEffect(() => {
         const handleCategories = async () => {
-            let resultados = await axios.get(`http://localhost:3500/api/products`);
+            let resultados = await axios.get(`${requestPort}/api/products`);
             setCategories(resultados.data.totalProdByCategory);
         };
         handleCategories();
@@ -62,7 +61,7 @@ function ContentWrapper({pageNumber}) {
 
     useEffect(() => {
         const hadleProductsPage = async () => {
-            let resultados = await axios.get(`http://localhost:3500/api/products?page=${page}`);
+            let resultados = await axios.get(`${requestPort}/api/products?page=${page}`);
             setProductByPage(resultados.data);
         };
         hadleProductsPage();
@@ -84,7 +83,7 @@ function ContentWrapper({pageNumber}) {
         }
     }
     return (
-        <div id="content-wrapper" className="d-flex flex-column">
+        <div className="d-flex flex-column container-general">
             <div id="content">
                 <Topbar />
                 <NavMenu />
@@ -105,7 +104,7 @@ function ContentWrapper({pageNumber}) {
                         <div className='col-md-6'>
                             <CardDetails
                                 cols='col'
-                                image={!isEmpty(product) ? product.rows[0].images[0].name : ''}
+                                image={!isEmpty(product) ? product.rows[0].images[0]?.name : ''}
                                 title={!isEmpty(product) ? product.rows[0].name : ''}
                                 description={!isEmpty(product) ? product.rows[0].description : ''}
                                 aditionalData={!isEmpty(product) ? product.rows[0].price : ''}
@@ -117,7 +116,7 @@ function ContentWrapper({pageNumber}) {
                             {!isEmpty(product) && !isUndefined(count) &&
                                 <CardDetails
                                     cols='col'
-                                    image={product.rows[count]?.images[0].name}
+                                    image={product.rows[count]?.images[0]?.name}
                                     title={product.rows[count]?.name}
                                     description={product.rows[count]?.description}
                                     aditionalData={product.rows[count]?.price}
