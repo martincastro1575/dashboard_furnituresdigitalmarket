@@ -43,7 +43,7 @@ function ProductDetailView() {
                     <p class="card-text">Medida de ancho: {product.width}</p>
                     <p class="card-text">Cantidad disponible: {product.quantity}</p>
                     <p class="card-text">Descuento para clientes registrados: {product.discount}</p>
-                    <p class="card-text">Precio full sin descuento: {product.price}</p>
+                    <p class="card-text">Precio full sin descuento: $ {product.price}</p>
                   </div>
                 </div>
               </div>
