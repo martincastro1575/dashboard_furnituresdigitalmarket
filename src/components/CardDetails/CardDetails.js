@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { isEmpty } from "lodash";
 
 function CardDetails({ cols, image, title, description, aditionalData, linkTo, props, onClickCard, detail }) {
+
   return (
     <div className='col card-details'>
       <div className="card" onClick={detail ? () => onClickCard(detail) : ''}>
@@ -37,7 +38,6 @@ CardDetails.propTypes = {
 CardDetails.defaultProps = {
   title: "Total",
   quantity: 0,
-  image:'any'
 };
 
 export default CardDetails;

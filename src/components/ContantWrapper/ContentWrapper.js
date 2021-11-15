@@ -18,15 +18,16 @@ import CardListCategories from "../CardListCategories/CardListCategories";
 function ContentWrapper({pageNumber}) {
     const [product, setProduct] = useState();
     const [categories, setCategories] = useState([]);
-    const [count, setCount] = useState("");
+    const [count, setCount] = useState();
     const [productByPage, setProductByPage] = useState("");
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(pageNumber);
 
-
+    
+console.log(product)
     useEffect(() => {
         if (!isEmpty(product)) {
-            setCount(product.count - 1)
+            setCount(product.rows.length -1)
         }
     }, [product]);
 
@@ -116,7 +117,7 @@ function ContentWrapper({pageNumber}) {
                             {!isEmpty(product) && !isUndefined(count) &&
                                 <CardDetails
                                     cols='col'
-                                    image={product.rows[count]?.images[0]?.name}
+                                    image={!isEmpty(product) ? product.rows[count]?.images[0]?.name : ''}
                                     title={product.rows[count]?.name}
                                     description={product.rows[count]?.description}
                                     aditionalData={product.rows[count]?.price}
