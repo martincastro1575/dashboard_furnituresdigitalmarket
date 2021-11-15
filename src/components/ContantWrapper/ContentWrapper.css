@@ -1,7 +1,12 @@
+#content-wrapper{
+height: 100%;
+}
+
 .title-col{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #606060;
 }
 
 .row-content{

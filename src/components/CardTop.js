@@ -9,16 +9,16 @@ function CardTop({ title, quantity, cols, icon }) {
         <div className="card-body">
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
-              <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
+              <div className="text-xstext-primary text-uppercase mb-1 card-top-title">
                 {title}
               </div>
-              <div className="h5 mb-0 font-weight-bold text-gray-800">
+              <div className="h5 mb-0 card-top-quantity">
                 {quantity}
               </div>
             </div>
             
-            <div className="col-auto">
-              <i className={`${icon}${" fa-2x text-gray-300"}`}></i>
+            <div className="col-auto icon-box">
+              <i className={`${icon}${" fa-2x"}`}></i>
             </div>
           </div>
         </div>

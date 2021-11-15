@@ -1,7 +1,6 @@
 /* Card Details Css*/
 
 img {
-  max-height: 200px;
   object-fit: cover;
   object-position: center;
 }
@@ -9,6 +8,8 @@ img {
 .card-header-list{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
 }
 
 .arrow-buttons button{

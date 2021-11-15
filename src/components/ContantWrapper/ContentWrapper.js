@@ -13,12 +13,15 @@ import axios from "axios";
 
 
 import CardListProducts from "../CardListProducts/CardListProducts";
+import CardListCategories from "../CardListCategories/CardListCategories";
 
 function ContentWrapper({pageNumber}) {
     const [product, setProduct] = useState();
-    const [categories, setCategories] = useState("");
+    const [categories, setCategories] = useState([]);
     const [count, setCount] = useState("");
     const [productByPage, setProductByPage] = useState("");
+    const [users, setUsers] = useState([]);
+    console.log("🚀 ~ file: ContentWrapper.js ~ line 23 ~ ContentWrapper ~ users", users)
     const [page, setPage] = useState(pageNumber);
 
 
@@ -36,6 +39,16 @@ function ContentWrapper({pageNumber}) {
             setProduct(resultados.data.data);
         };
         handleProducts();
+    }, []);
+
+    useEffect(() => {
+        const handleUsers = async () => {
+            let resultados = await axios.get(
+                `http://localhost:3500/api/users/`
+            );
+            setUsers(resultados.data.total);
+        };
+        handleUsers();
     }, []);
 
 
@@ -78,9 +91,9 @@ function ContentWrapper({pageNumber}) {
                 <div className="container-fluid">
                     <div className="row">
                         {/* <!-- Cards totales --> */}
-                        <CardTop cols='col-md-4 mb-4' title="Total productos" quantity={product?.count} icon='fas fa-shopping-bag' />
-                        <CardTop cols='col-md-4 mb-4' title="Total categorias" quantity={categories.length} icon='fas fa-stream' />
-                        <CardTop cols='col-md-4 mb-4' title="Total categorias" quantity={categories.length} icon='fas fa-stream' />
+                        <CardTop cols='col-md-4 mb-4' title="Total Productos" quantity={product?.count} icon='fas fa-shopping-bag' />
+                        <CardTop cols='col-md-4 mb-4' title="Total Categorias" quantity={categories.length} icon='fas fa-stream' />
+                        <CardTop cols='col-md-4 mb-4' title="Total Usuarios" quantity={users} icon='fas fa-users' />
                         {/* <!-- Cards totales --> */}
                     </div>
                 </div>
@@ -118,7 +131,17 @@ function ContentWrapper({pageNumber}) {
                     <div className='row'>
                         <div className='col-md-6'>
                             {!isEmpty(productByPage) &&
-                                <CardListProducts handlePageNext={handlePageNext} handlePagePrevious={handlePagePrevious} products={productByPage.data} />
+                                <CardListProducts 
+                                page={page} 
+                                totalPages={productByPage.pages} 
+                                handlePageNext={handlePageNext} 
+                                handlePagePrevious={handlePagePrevious} 
+                                products={productByPage.data} />
+                            }
+                        </div>
+                        <div className='col-md-6'>
+                            {!isEmpty(productByPage) &&
+                                <CardListCategories categories={categories} />
                             }
                         </div>
                     </div>
