@@ -1,0 +1,15 @@
+/* Card Details Css*/
+
+.card-details img{
+  max-height: 400px;
+  width: 100%;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+.card-details .card{
+  height: 100%;
+}
+
+.card-details .card-body{
+  flex: 0.5;
+}

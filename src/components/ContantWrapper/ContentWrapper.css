@@ -1,0 +1,17 @@
+#content-wrapper{
+height: 100%;
+padding-bottom: 160px;
+}
+
+.title-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #606060;
+}
+
+.row-content{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed #dfdfdf;
+}
